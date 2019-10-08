@@ -1,0 +1,651 @@
+{
+  "swagger": "2.0.0",
+  "info": {
+    "title": "SIA UNRAM API",
+    "description": "Beberapa API untuk keperluan teknis dan sub-sistem di Universitas Mataram",
+    "contact": {
+      "name": "SIA UNRAM",
+      "url": "https://sia.unram.ac.id",
+      "email": "helpdesk.sia@unram.ac.id"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "host": "sia.unram.ac.id",
+  "basePath": "/index.php/api",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "auth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "auth": []
+    }
+  ],
+  "paths": {
+    "/Prodi": {
+      "get": {
+        "summary": "Daftar PRODI.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "kode_fakultas",
+            "in": "query",
+            "description": "kode fakultas",
+            "type": "string"
+          },
+          {
+            "name": "nama_PS",
+            "in": "query",
+            "description": "cari berdasarkan nama PRODI.",
+            "type": "string"
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "urutkan berdasarkan field.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "kode",
+                "nama_PS",
+                "nama_fakultas"
+              ],
+              "default": "kode"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "mode pengurutan.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "DESC",
+                "ASC"
+              ],
+              "default": "DESC"
+            }
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "description": "jumlah data per-query (-1 untuk semua).",
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset data (biasanya untuk paging).",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/Mahasiswa": {
+      "get": {
+        "summary": "Daftar mahasiswa.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "kode_fakultas",
+            "in": "query",
+            "description": "kode fakultas (-1 untuk semua)",
+            "type": "integer"
+          },
+          {
+            "name": "kode_prodi",
+            "in": "query",
+            "description": "kode prodi (-1 untuk semua)",
+            "type": "integer"
+          },
+          {
+            "name": "id_konsentrasi",
+            "in": "query",
+            "description": "id konsentrasi (-1 untuk semua)",
+            "type": "integer"
+          },
+          {
+            "name": "NIM",
+            "in": "query",
+            "description": "cari berdasarkan NIM",
+            "type": "string"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "cari berdasarkan nama",
+            "type": "string"
+          },
+          {
+            "name": "thn_masuk",
+            "in": "query",
+            "description": "tahun masuk mahasiswa (format: YYYYS, contoh: 20081)",
+            "type": "integer"
+          },
+          {
+            "name": "semester",
+            "in": "query",
+            "description": "filter berdasarkan semester mahasiswa",
+            "type": "integer"
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "urutkan berdasarkan field.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "kode",
+                "nama_PS",
+                "nama_fakultas"
+              ],
+              "default": "kode"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "mode pengurutan.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "DESC",
+                "ASC"
+              ],
+              "default": "DESC"
+            }
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "description": "jumlah data per-query (-1 untuk semua).",
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset data (biasanya untuk paging).",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/Mahasiswa/Profil": {
+      "get": {
+        "summary": "Profil mahasiswa.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nim",
+            "in": "query",
+            "description": "NIM mahasiswa",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/Mahasiswa/KRS": {
+      "get": {
+        "summary": "KRS mahasiswa.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nim",
+            "in": "query",
+            "description": "NIM mahasiswa",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tahun_akademik",
+            "in": "query",
+            "description": "tahun akademik KRS",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/Dosen": {
+      "get": {
+        "summary": "Daftar dosen",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "kode_PS",
+            "in": "query",
+            "description": "cari berdasarkan kode PRODI",
+            "type": "string"
+          },
+          {
+            "name": "kode",
+            "in": "query",
+            "description": "cari berdasarkan kode dosen",
+            "type": "string"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "description": "cari berdasarkan nama dosen",
+            "type": "string"
+          },
+          {
+            "name": "NIM",
+            "in": "query",
+            "description": "cari berdasarkan NIM",
+            "type": "string"
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "urutkan berdasarkan field.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "kode",
+                "nama_PS",
+                "nama_fakultas"
+              ],
+              "default": "kode"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "mode pengurutan.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "DESC",
+                "ASC"
+              ],
+              "default": "DESC"
+            }
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "description": "jumlah data per-query (-1 untuk semua).",
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset data (biasanya untuk paging).",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/Matakuliah": {
+      "get": {
+        "summary": "Daftar matakuliah",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "kode_PS",
+            "in": "query",
+            "description": "cari berdasarkan kode PRODI",
+            "type": "string"
+          },
+          {
+            "name": "id_kurikulum",
+            "in": "query",
+            "description": "cari berdasarkan kurikulum (-1 untuk semua)",
+            "type": "integer"
+          },
+          {
+            "name": "tahun_akademik_kurikulum",
+            "in": "query",
+            "description": "cari berdasarkan tahun akademik kurikulum (format: YYYY, contoh: 2016)",
+            "type": "string"
+          },
+          {
+            "name": "id_konsentrasi",
+            "in": "query",
+            "description": "id konsentrasi (-1 untuk semua)",
+            "type": "integer"
+          },
+          {
+            "name": "semester",
+            "in": "query",
+            "description": "filter berdasarkan semester matakuliah",
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "filter berdasarkan status",
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "enum": [
+                -1,
+                0,
+                1
+              ],
+              "default": -1
+            }
+          },
+          {
+            "name": "kode_mk",
+            "in": "query",
+            "description": "cari berdasarkan kode MK",
+            "type": "string"
+          },
+          {
+            "name": "nama_mk",
+            "in": "query",
+            "description": "cari berdasarkan nama MK",
+            "type": "string"
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "urutkan berdasarkan field.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "kode",
+                "nama_PS",
+                "nama_fakultas"
+              ],
+              "default": "kode"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "mode pengurutan.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "DESC",
+                "ASC"
+              ],
+              "default": "DESC"
+            }
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "description": "jumlah data per-query (-1 untuk semua).",
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset data (biasanya untuk paging).",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/Matakuliah/DosenPengajar": {
+      "get": {
+        "summary": "Daftar dosen pengajar matakuliah",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "kode_dosen",
+            "in": "query",
+            "description": "filter berdasarkan kode dosen",
+            "type": "integer"
+          },
+          {
+            "name": "id_matakuliah",
+            "in": "query",
+            "description": "filter berdasarkan ID matakuliah",
+            "type": "string"
+          },
+          {
+            "name": "tahun_akademik",
+            "in": "query",
+            "description": "filter berdasarkan tahun akademik (format: [tahun][semester], contoh: 20161)",
+            "type": "integer"
+          },
+          {
+            "name": "nama_kelas",
+            "in": "query",
+            "description": "cari berdasarkan nama kelas",
+            "type": "string"
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "urutkan berdasarkan field.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "id",
+                "nama_kelas",
+                "id_matakuliah"
+              ],
+              "default": "id"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "mode pengurutan.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "DESC",
+                "ASC"
+              ],
+              "default": "DESC"
+            }
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "description": "jumlah data per-query (-1 untuk semua).",
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset data (biasanya untuk paging).",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/Nilai": {
+      "get": {
+        "summary": "Daftar nilai",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nim",
+            "in": "query",
+            "description": "cari berdasarkan NIM mahasiswa",
+            "type": "string"
+          },
+          {
+            "name": "NIM_nama",
+            "in": "query",
+            "description": "cari berdasarkan NIM atau Nama mahasiswa",
+            "type": "string"
+          },
+          {
+            "name": "id_mk",
+            "in": "query",
+            "description": "cari berdasarkan MK (-1 untuk semua)",
+            "type": "integer"
+          },
+          {
+            "name": "id_kurikulum",
+            "in": "query",
+            "description": "cari berdasarkan kurikulum (-1 untuk semua)",
+            "type": "integer"
+          },
+          {
+            "name": "nilai_min",
+            "in": "query",
+            "description": "filter berdasarkan index nilai (-1 untuk semua)",
+            "type": "integer"
+          },
+          {
+            "name": "tahun_akademik",
+            "in": "query",
+            "description": "cari berdasarkan tahun akademik (format: YYYYS, contoh: 20161)",
+            "type": "string"
+          },
+          {
+            "name": "nama_kelas",
+            "in": "query",
+            "description": "cari berdasarkan nama kelas",
+            "type": "string"
+          },
+          {
+            "name": "semester",
+            "in": "query",
+            "description": "cari berdasarkan ID semester suat MK diprogramkan",
+            "type": "integer"
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "urutkan berdasarkan field.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "kode",
+                "nama_PS",
+                "nama_fakultas"
+              ],
+              "default": "kode"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "mode pengurutan.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "DESC",
+                "ASC"
+              ],
+              "default": "DESC"
+            }
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "description": "jumlah data per-query (-1 untuk semua).",
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset data (biasanya untuk paging).",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    }
+  }
+}
