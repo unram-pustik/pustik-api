@@ -1,0 +1,253 @@
+{
+  "swagger": "2.0.0",
+  "info": {
+    "title": "Payment UNRAM API",
+    "description": "Spesifikasi teknis dari payment Universitas Mataram kepada Bank untuk keperluan host-to-host.\nKoneksi yang masuk ke server UNRAM perlu dilakukan whitelist IP dan Port terlebih dahulu.",
+    "contact": {
+      "name": "Payment Gateway",
+      "url": "http://e-pay.unram.ac.id",
+      "email": "pustik@unram.ac.id"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "host": "e-pay.unram.ac.id",
+  "basePath": "/index.php/b",
+  "schemes": [
+    "http"
+  ],
+  "security": [
+    {
+      "auth": []
+    }
+  ],
+  "paths": {
+    "/bni": {
+      "post": {
+        "tags": [
+          "Bank BNI"
+        ],
+        "summary": "Flagging.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "in": "query",
+            "description": "data pembayaran dalam bentuk terenkripsi.",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/btn": {
+      "post": {
+        "tags": [
+          "Bank BTN"
+        ],
+        "summary": "Flagging.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "va",
+            "in": "query",
+            "description": "data pembayaran dalam bentuk terenkripsi.",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/ntb": {
+      "post": {
+        "tags": [
+          "Bank NTB"
+        ],
+        "summary": "Flagging.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "virtual_account",
+            "in": "query",
+            "description": "data pembayaran dalam bentuk terenkripsi.",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/mandiri/inquiry": {
+      "get": {
+        "tags": [
+          "Bank Mandiri"
+        ],
+        "summary": "Inquiry detail VA.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "va",
+            "in": "query",
+            "description": "nomor Virtual Account",
+            "type": "integer",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/mandiri/payment": {
+      "put": {
+        "tags": [
+          "Bank Mandiri"
+        ],
+        "summary": "Flagging pembayaran VA.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "va",
+            "in": "query",
+            "description": "nomor Virtual Account",
+            "type": "integer",
+            "required": "true"
+          },
+          {
+            "name": "trxid",
+            "in": "query",
+            "description": "nomor unik transaksi",
+            "type": "integer",
+            "required": "true"
+          },
+          {
+            "name": "total",
+            "in": "query",
+            "description": "nominal pembayaran",
+            "type": "integer",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bukopin/inquiry": {
+      "get": {
+        "tags": [
+          "Bank Bukopin"
+        ],
+        "summary": "Inquiry detail VA.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "va",
+            "in": "query",
+            "description": "nomor Virtual Account",
+            "type": "integer",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bukopin/payment": {
+      "put": {
+        "tags": [
+          "Bank Bukopin"
+        ],
+        "summary": "Flagging pembayaran VA.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "va",
+            "in": "query",
+            "description": "nomor Virtual Account",
+            "type": "integer",
+            "required": "true"
+          },
+          {
+            "name": "trxid",
+            "in": "query",
+            "description": "nomor unik transaksi",
+            "type": "integer",
+            "required": "true"
+          },
+          {
+            "name": "total",
+            "in": "query",
+            "description": "nominal pembayaran",
+            "type": "integer",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    }
+  }
+}
