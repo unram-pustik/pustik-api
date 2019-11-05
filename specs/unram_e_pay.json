@@ -201,8 +201,90 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Ok"
+          "00": {
+            "description": "Sukses",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "00"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "nama": {
+                  "type": "string",
+                  "example": "Ahmad Zafrullah"
+                },
+                "prodi": {
+                  "type": "string",
+                  "example": "Teknik Informatika (S1)"
+                },
+                "periode": {
+                  "type": "integer",
+                  "example": "20191"
+                },
+                "total": {
+                  "type": "integer",
+                  "example": "3050000"
+                },
+                "detail": {
+                  "type": "object",
+                  "properties": {
+                    "nama_biaya": {
+                      "type": "string",
+                      "example": "SPP 2019/2020 Ganjil"
+                    },
+                    "nominal": {
+                      "type": "integer",
+                      "example": "3050000"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "10": {
+            "description": "Nomor VA sudah terbayar",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "10"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Nomor VA sudah terbayar"
+                }
+              }
+            }
+          },
+          "99": {
+            "description": "Error lainnya",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "va": {
+                  "type": "integer",
+                  "example": "xxxxxxx008004"
+                },
+                "status": {
+                  "type": "integer",
+                  "example": "99"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Internal error"
+                }
+              }
+            }
           }
         }
       }
@@ -243,8 +325,73 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Ok"
+          "00": {
+            "description": "Sukses",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "00"
+                },
+                "va": {
+                  "type": "integer",
+                  "example": "xxxxxxx008004"
+                },
+                "trxid": {
+                  "type": "string",
+                  "example": "xxxxxxxyyyyyyyy"
+                },
+                "reference": {
+                  "type": "string",
+                  "example": "xxxxxxxyyyyyyyy"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "nama": {
+                  "type": "string",
+                  "example": "Ahmad Zafrullah"
+                }
+              }
+            }
+          },
+          "50": {
+            "description": "Jumlah pemayaran tidak sesuai",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "50"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Jumlah pembayaran tidak sesuai"
+                }
+              }
+            }
+          },
+          "99": {
+            "description": "Error lainnya",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "99"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Internal error"
+                }
+              }
+            }
           }
         }
       }
