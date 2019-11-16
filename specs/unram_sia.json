@@ -287,12 +287,6 @@
             "type": "string"
           },
           {
-            "name": "NIM",
-            "in": "query",
-            "description": "cari berdasarkan NIM",
-            "type": "string"
-          },
-          {
             "name": "orderby",
             "in": "query",
             "description": "urutkan berdasarkan field.",
