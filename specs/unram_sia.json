@@ -101,6 +101,31 @@
         }
       }
     },
+    "/Prodi/RuangKelas": {
+      "get": {
+        "summary": "Ruang kelas suatu prodi.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "kode_prodi",
+            "in": "query",
+            "description": "kode prodi",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
     "/Mahasiswa": {
       "get": {
         "summary": "Daftar mahasiswa.",
