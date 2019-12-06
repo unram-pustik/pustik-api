@@ -246,14 +246,14 @@
               }
             }
           },
-          "10": {
+          "01": {
             "description": "Nomor VA sudah terbayar",
             "schema": {
               "type": "object",
               "properties": {
                 "status": {
                   "type": "integer",
-                  "example": "10"
+                  "example": "01"
                 },
                 "id": {
                   "type": "integer",
@@ -262,6 +262,46 @@
                 "message": {
                   "type": "string",
                   "example": "Nomor VA sudah terbayar"
+                }
+              }
+            }
+          },
+          "02": {
+            "description": "Nomor VA sudah berakhir",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "02"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Nomor VA sudah berakhir"
+                }
+              }
+            }
+          },
+          "03": {
+            "description": "Nomor VA tidak ditemukan",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "03"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Nomor VA tidak ditemukan"
                 }
               }
             }
@@ -357,14 +397,74 @@
               }
             }
           },
-          "50": {
+          "01": {
+            "description": "Nomor VA sudah terbayar",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "01"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Nomor VA sudah terbayar"
+                }
+              }
+            }
+          },
+          "02": {
+            "description": "Nomor VA sudah berakhir",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "02"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Nomor VA sudah berakhir"
+                }
+              }
+            }
+          },
+          "03": {
+            "description": "Nomor VA tidak ditemukan",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": "03"
+                },
+                "id": {
+                  "type": "integer",
+                  "example": "F1D008004"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Nomor VA tidak ditemukan"
+                }
+              }
+            }
+          },
+          "04": {
             "description": "Jumlah pemayaran tidak sesuai",
             "schema": {
               "type": "object",
               "properties": {
                 "status": {
                   "type": "integer",
-                  "example": "50"
+                  "example": "04"
                 },
                 "id": {
                   "type": "integer",
