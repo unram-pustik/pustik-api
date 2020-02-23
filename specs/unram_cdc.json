@@ -1,0 +1,178 @@
+{
+  "swagger": "2.0.0",
+  "info": {
+    "title": "CDC UNRAM API",
+    "description": "",
+    "contact": {
+      "name": "PUSTIK UNRAM",
+      "url": "https://pustik.unram.ac.id",
+      "email": "pustik@unram.ac.id"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "host": "cdc.unram.ac.id",
+  "basePath": "/index.php/api/statistik",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "level": {
+      "type": "apiKey",
+      "in": "query",
+      "name": "level"
+    },
+    "token": {
+      "type": "apiKey",
+      "in": "query",
+      "name": "token"
+    }
+  },
+  "security": [
+    {
+      "level": [],
+      "token": []
+    }
+  ],
+  "paths": {
+    "/data_alumni": {
+      "get": {
+        "summary": "Data Alumni",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/data_kecocokan": {
+      "get": {
+        "summary": "Data kecocokan dengan Program Studi",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/waktu_tunggu": {
+      "get": {
+        "summary": "Data waktu tunggu pekerjaan",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/metode_pembelajaran": {
+      "get": {
+        "summary": "Data metode belajar",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/jenis_pekerjaan": {
+      "get": {
+        "summary": "Data jenis pekerjaan",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/cara_mencari_kerja": {
+      "get": {
+        "summary": "Data cara mencari kerja",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/sumber_biaya": {
+      "get": {
+        "summary": "Data sumber biaya",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/perprodi": {
+      "get": {
+        "summary": "Data input tiap prodi",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    }
+  }
+}
