@@ -1,0 +1,396 @@
+{
+  "swagger": "2.0.0",
+  "info": {
+    "title": "Kinerja Simlitabmas UNRAM API",
+    "description": "Spesifikasi teknis dari Simlitabmas Universitas Mataram.",
+    "contact": {
+      "name": "PUSTIK UNRAM",
+      "url": "https://kinerja.simlitabmas.unram.ac.id",
+      "email": "pustik@unram.ac.id"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "host": "kinerja.simlitabmas.unram.ac.id",
+  "basePath": "/index.php/api",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "auth": {
+      "type": "apiKey",
+      "in": "query",
+      "name": "___key"
+    }
+  },
+  "security": [
+    {
+      "auth": []
+    }
+  ],
+  "paths": {
+    "/bkd/penelitian/jurnal": {
+      "get": {
+        "tags": [
+          "BKD - Penelitian"
+        ],
+        "summary": "Jurnal penelitian.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/penelitian/hibah": {
+      "get": {
+        "tags": [
+          "BKD - Penelitian"
+        ],
+        "summary": "Hibah penelitian.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/penelitian/prosiding": {
+      "get": {
+        "tags": [
+          "BKD - Penelitian"
+        ],
+        "summary": "Prosiding penelitian.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/penelitian/pemakalah": {
+      "get": {
+        "tags": [
+          "BKD - Penelitian"
+        ],
+        "summary": "Pemakalah penelitian.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/penelitian/peserta": {
+      "get": {
+        "tags": [
+          "BKD - Penelitian"
+        ],
+        "summary": "Peserta penelitian.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/pengabdian/jurnal": {
+      "get": {
+        "tags": [
+          "BKD - Pengabdian"
+        ],
+        "summary": "Jurnal pengabdian.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/pengabdian/hibah": {
+      "get": {
+        "tags": [
+          "BKD - Pengabdian"
+        ],
+        "summary": "Hibah pengabdian.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/pengabdian/media": {
+      "get": {
+        "tags": [
+          "BKD - Pengabdian"
+        ],
+        "summary": "Media pengabdian.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/buku": {
+      "get": {
+        "tags": [
+          "BKD - Buku"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/hki": {
+      "get": {
+        "tags": [
+          "BKD - HKI"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/bkd/lain": {
+      "get": {
+        "tags": [
+          "BKD - Lain"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nip",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "type": "string",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    }
+  }
+}
