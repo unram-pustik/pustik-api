@@ -46,6 +46,11 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
+          {
             "name": "nip",
             "in": "query",
             "type": "string",
@@ -78,6 +83,11 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
           {
             "name": "nip",
             "in": "query",
@@ -112,6 +122,11 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
+          {
             "name": "nip",
             "in": "query",
             "type": "string",
@@ -144,6 +159,11 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
           {
             "name": "nip",
             "in": "query",
@@ -178,6 +198,11 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
+          {
             "name": "nip",
             "in": "query",
             "type": "string",
@@ -210,6 +235,11 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
           {
             "name": "nip",
             "in": "query",
@@ -244,6 +274,11 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
+          {
             "name": "nip",
             "in": "query",
             "type": "string",
@@ -277,6 +312,11 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
+          {
             "name": "nip",
             "in": "query",
             "type": "string",
@@ -308,6 +348,11 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
           {
             "name": "nip",
             "in": "query",
@@ -341,6 +386,11 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
+          {
             "name": "nip",
             "in": "query",
             "type": "string",
@@ -372,6 +422,11 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "type": "int"
+          },
           {
             "name": "nip",
             "in": "query",
