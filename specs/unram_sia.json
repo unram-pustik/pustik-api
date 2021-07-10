@@ -677,12 +677,6 @@
         ],
         "parameters": [
           {
-            "name": "username",
-            "in": "query",
-            "description": "username dosen atau staf",
-            "type": "string"
-          },
-          {
             "name": "tahun",
             "in": "query",
             "description": "tahun",
