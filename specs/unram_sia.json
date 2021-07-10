@@ -665,6 +665,42 @@
           }
         }
       }
+    },
+    "/Presensi": {
+      "get": {
+        "summary": "Jumlah absen",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "username dosen atau staf",
+            "type": "string"
+          },
+          {
+            "name": "tahun",
+            "in": "query",
+            "description": "tahun",
+            "type": "integer"
+          },
+          {
+            "name": "bulan",
+            "in": "query",
+            "description": "bulan",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
     }
   }
 }
