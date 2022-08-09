@@ -487,6 +487,12 @@
         ],
         "parameters": [
           {
+            "name": "kode_PS",
+            "in": "query",
+            "description": "filter berdasarkan kode prodi",
+            "type": "string"
+          },
+          {
             "name": "kode_dosen",
             "in": "query",
             "description": "filter berdasarkan kode dosen",
